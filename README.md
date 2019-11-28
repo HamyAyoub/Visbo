@@ -3,19 +3,20 @@
 ## Features
 
 * React 16
+* * Dependencies:
 * * React
 * * ReactDOM
 * Webpack 4
-* * Main components
+* * Main components:
 * * webpack - main engine of webpack plugin for its dependents to work
 * * webpack-cli - to access webpack commands through CLI (think npm start, npm build..)
 * * webpack-dev-server - client-side development server
 * * html-webpack-plugin - helps creating HTML templates
 * Babel 7 - transpiles JSX into JavaScript
 * * Main components:
-* * babel-core - main engine of babel plugin for its dependents to work
-* * babel-preset-env - the ES5, ES6 supporting part
-* * babel-preset-react - preset to react
+* * babel-core - transforms ES6 code into ES5
+* * babel-preset-env - determines the plugins to use and provides modern functionality on older browsers that do not natively support it
+* * babel-preset-react - preset for all React plugins
 * * babel-loader - communicates with webpack
 * ESLint with Airbnb configuration
 * Redux - used to take control of your application’s state
@@ -24,8 +25,9 @@
 
 ## Optional
 
-* React Dev Tools
-* Redux Dev Tools - allows you to see, play back, and change your action history
+* Follow Airbnb Styleguide practices for React
+* Add React Dev Tools
+* Add Redux Dev Tools - allows you to see, play back, and change your action history
 
 ## Installation
 
