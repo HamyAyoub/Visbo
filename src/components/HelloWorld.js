@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 function mapStateToProps(state) {
   return {
@@ -14,6 +15,10 @@ class HelloWorld extends Component {
       <h1>{text}</h1>
      );
   }
+}
+
+HelloWorld.propTypes = {
+  text: PropTypes.string
 }
  
 export default connect(mapStateToProps)(HelloWorld);
