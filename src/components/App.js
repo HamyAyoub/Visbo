@@ -1,13 +1,10 @@
-import React, { Component } from 'react'
-import HelloWorld from './HelloWorld'
+import React from 'react';
+import HelloWorld from './HelloWorld';
 
-class App extends Component {
-  state = {  }
-  render() { 
-    return ( 
-      <HelloWorld />
-     );
-  }
-}
- 
+const App = () => (
+  <div>
+    <HelloWorld />
+  </div>
+);
+
 export default App;
