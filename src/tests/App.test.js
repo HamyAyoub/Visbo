@@ -26,6 +26,8 @@ describe("HelloWorld Component", () => {
       ).toJSON();
     expect(tree).toMatchSnapshot()
   });
+
+  // more tests to come as the app scales, Enzyme is installed and set up too
 })
 
 
