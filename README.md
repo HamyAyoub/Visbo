@@ -73,7 +73,7 @@ Webpack parses through the app starting at src/index.js, following any imported 
 
 Jest testing framework handles unit testing here and it starts the test runner in 'watch' mode
 
-### npm build
+### npm run build
 
 Webpack creates an optimized, production-ready bundle of the app, generates a new folder & files (./build/). The bundle created from this configuration has the source code minified and compressed for performance benefits and it also generates source maps
 
