@@ -67,6 +67,7 @@ hello-world-react-webpack-babel-setup
         |__ 
             App.js
             HelloWorld.js
+            style.js
         containers
         reducers
         redux
@@ -76,8 +77,11 @@ hello-world-react-webpack-babel-setup
         services
         tests
         |__ 
-            setupTests.js
-            HelloWolrd.js
+            _snapshots_
+            |__
+               HelloWorld.test.js.snap 
+            testsSetup.js
+            HelloWolrd.test.js
         types
         index.js
     .eslintrc.json
