@@ -52,6 +52,44 @@ Main parts:
 
 ---
 
+## Folder Structure
+
+```
+hello-world-react-webpack-babel-setup
+|__ 
+    actions
+    build
+    node_modules
+    public
+    src
+    |__
+        components
+        |__ 
+            App.js
+            HelloWorld.js
+        containers
+        reducers
+        redux
+        |__
+            store.js
+        routes
+        services
+        tests
+        |__ 
+            setupTests.js
+            HelloWolrd.js
+        types
+        index.js
+    .eslintrc.json
+    .env
+    config.js
+    package.json
+    package-lock.json
+    README.md
+```
+
+---
+
 ## Usage
 
 1. ```git clone https://github.com/alexandrakollarova/hello-world```
