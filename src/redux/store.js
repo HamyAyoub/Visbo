@@ -1,21 +1,18 @@
 import { createStore } from "redux";
 
 const initialState = {
-  todos: [
+  projects: [
     {
       id: 0,
       title: 'Wash dishes',
-      completed: false
     },
     {
       id: 1,
       title: 'Do homework',
-      completed: false
     },
     {
       id: 3,
       title: 'Buy groceries',
-      completed: false
     }
   ]
 }

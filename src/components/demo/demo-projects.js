@@ -1,16 +1,27 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
+function mapStateToProps(state) {
+  return {
+    projects: state.projects,
+  };
+}
 
 class DemoProjects extends Component {
   render() {
+    const { projects } = this.props;
+
     return (
-      <main className="demo-main">
+      <main className='demo-main'>
         <ul className="projects-list">
-          <li>
-            <h3>Project 1</h3>
-          </li>
-          <li>
-            <h3>Project 2</h3>
-          </li>
+          {projects.map(p => {
+            return (
+              <li key={p.id}>
+                <h3>{p.title}</h3>
+              </li>
+            )
+          })}
         </ul>
         <div>
           <button>Create new project</button>
@@ -20,4 +31,8 @@ class DemoProjects extends Component {
   }
 }
 
-export default DemoProjects;
+DemoProjects.propTypes = {
+  projects: PropTypes.array,
+};
+
+export default connect(mapStateToProps)(DemoProjects);
