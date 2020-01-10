@@ -1,33 +1,29 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Landing from './landing/landing';
-import Demo from './demo/demo';
-import DemoBoard from './demo/demo-board';
-import { connect } from 'react-redux';
+import LandingPage from './LandingPage/LandingPage';
+import DemoProjectList from './DemoPage/DemoProjectList';
+import DemoProjectItem from './DemoPage/DemoProjectItem';
+// import DemoBoard from './demo/demo-board';
+import PageNotFound from './PageNotFound'
 
-function mapStateToProps(state) {
-  return {
-    todos: state.todos,
-  };
-}
 
 class App extends Component {
   render() {
     return (
       <Switch>
-        <Route exact path='/' >
-          <Landing />
-        </Route>
+        <Route exact path='/' component={LandingPage} />
 
-        <Route path='/demo' >
-          <Demo />
-        </Route>
+        <Route exact path='/demo-project' component={DemoProjectList} />
 
-        <Route path='/demo-board' >
+        <Route path='/demo-project/:projectId' component={DemoProjectItem} />
+
+        {/* <Route path='/demo-board' >
           <DemoBoard />
-        </Route>
+        </Route> */}
+
+        <Route component={PageNotFound} />
       </Switch>
     );
   }
 }
-export default connect(mapStateToProps)(App);
+export default App;

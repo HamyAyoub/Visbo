@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import LandingMain from './landing-main';
-import LandingHeader from './landing-header';
-import LandingFooter from './landing-footer';
-import './landing.css';
+import LandingHeader from './LandingHeader';
+import LandingFooter from './LandingFooter';
+import './Landing.css';
 
-class Landing extends Component {
+class LandingPage extends Component {
   render() {
     return (
       <div>
@@ -16,4 +16,4 @@ class Landing extends Component {
   }
 }
 
-export default Landing;
+export default LandingPage;

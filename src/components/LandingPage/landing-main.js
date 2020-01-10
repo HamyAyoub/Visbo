@@ -9,7 +9,7 @@ class LandingMain extends Component {
         <h3>Easy, flexibile and free.</h3>
 
         <div>
-          <Link to='/demo' className='btn btn-demo'>EXPLORE VISBO</Link>
+          <Link to='/demo-project' className='btn btn-demo'>EXPLORE VISBO</Link>
         </div>
       </main>
     );

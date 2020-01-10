@@ -9,7 +9,7 @@ class LandingHeader extends Component {
           <ul>
             <NavLink to='/' className='logo'>Visbo</NavLink>
             <li className='landing-li'>Sign Up</li>
-            <NavLink to='/demo' className='landing-li'>Demo</NavLink>
+            <NavLink to='/demo-project' className='landing-li'>Demo</NavLink>
           </ul>
         </nav>
       </header>
