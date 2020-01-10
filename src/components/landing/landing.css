@@ -1,0 +1,65 @@
+body {
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* LINK, BUTTON, UL, LI */
+
+a {
+  text-decoration: none;
+  color: inherit
+}
+
+button {
+  border: none;
+  border: solid 1px black;
+  background-color: inherit;
+  border-radius: 30px;
+  padding: 10px 15px;
+}
+
+.btn {
+  border: solid 1px black;
+  border-radius: 30px;
+  padding: 10px 15px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+nav {
+  margin: 10px;
+}
+
+.logo {
+  float: left;
+  padding-left: 0;
+}
+
+.landing-li {
+  float: right;
+  padding-left: 10px;
+}
+
+.landing-main {
+  clear: both;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-top: 100px;
+}
+
+footer {
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+}
+
+@media screen and (min-width: 600px) {
+  
+}
