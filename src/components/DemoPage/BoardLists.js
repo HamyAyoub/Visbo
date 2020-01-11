@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-
-function mapStateToProps(state) {
-  lists: state.lists
-}
+import BoardCards from './BoardCards';
 
 class BoardLists extends Component {
   render() {
-
     return (
       <div>
-        {this.props.lists.map(li => <h3>{li.title}</h3>)}
+        <section className="demo-project-uls">
+          <ul>
+            {this.props.lists.map(li =>
+              <li>
+                <h3>{li.title}</h3>
+                <BoardCards
+                  cards={li.cardIds.map(id => this.props.cards[id])} />
+              </li>
+            )}
+          </ul>
+        </section>
       </div>
     );
   }

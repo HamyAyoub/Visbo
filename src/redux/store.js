@@ -8,14 +8,14 @@ const initialState = {
 
   boards: [
     { id: 0, listIds: [0, 1, 2] },
-    { id: 1, listIds: [4] }
+    { id: 1, listIds: [3] }
   ],
 
   lists: [
     { id: 0, title: 'To-do', cardIds: [5, 6, 7, 8] },
     { id: 1, title: 'In-progress', cardIds: [4] },
     { id: 2, title: 'Done', cardIds: [0, 1, 2, 3] },
-    { id: 4, title: 'To-do', cardIds: [9] }
+    { id: 3, title: 'To-do', cardIds: [9] }
   ],
 
   cards: [
@@ -29,7 +29,9 @@ const initialState = {
     { id: 7, title: 'style your app' },
     { id: 8, title: 'finalize project' },
     { id: 9, title: 'book spa & hotel' }
-  ]
+  ],
+
+  activeLists: []
 }
 
 function reducer(state = initialState, action) {

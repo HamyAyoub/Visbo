@@ -13,9 +13,24 @@ function mapStateToProps(state) {
 }
 
 class DemoProjectItem extends Component {
-  render() {
-    const { boards, lists } = this.props;
 
+  renderBoardLists() {
+    const activeProject = this.props.projects.find(p =>
+      p.id == this.props.match.params.projectId
+    )
+
+    const activeBoard = this.props.boards.find(b =>
+      b.id == activeProject.boardId
+    )
+
+    const activeLists = activeBoard.listIds.map(id =>
+      this.props.lists[id]
+    )
+
+    return activeLists
+  }
+
+  render() {
     const project = this.props.projects.find(p =>
       p.id == this.props.match.params.projectId
     )
@@ -26,17 +41,12 @@ class DemoProjectItem extends Component {
           <h2>{project.title}</h2>
         </div>
 
-        <section className="demo-project-uls">
-          {boards.map(b =>
-            <ul key={b.id}>
-              <h3>
-                <BoardLists
-                  lists={b.listIds.map(id => lists[id])}
-                />
-              </h3>
-            </ul>
-          )}
-        </section>
+        <h3>
+          <BoardLists
+            lists={this.renderBoardLists()}
+            cards={this.props.cards}
+          />
+        </h3>
       </main>
     );
   }
