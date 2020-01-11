@@ -1,18 +1,21 @@
-import { ADD_PROJECT } from '../actions/actions';
+import { ADD_PROJECT, ADD_CARD } from '../actions/actions';
 
 const initialState = {
   projects: [
-    { id: 0, title: 'Fullstack Capstone', listIds: [0, 1, 2] },
-    { id: 1, title: 'Bachelorette Party', listIds: [3, 4, 5] }
-  ],
-
-  lists: [
-    { id: 0, title: 'To-do', cardIds: [5, 6, 7, 8] },
-    { id: 1, title: 'In-progress', cardIds: [4] },
-    { id: 2, title: 'Done', cardIds: [0, 1, 2, 3] },
-    { id: 3, title: 'To-do', cardIds: [9] },
-    { id: 4, title: 'In-progress', cardIds: [] },
-    { id: 6, title: 'Done', cardIds: [] }
+    {
+      id: 0,
+      title: 'Fullstack Capstone',
+      listTodo: [5, 6, 7, 8],
+      listInProgress: [4],
+      listDone: [0, 1, 2, 3]
+    },
+    {
+      id: 1,
+      title: 'Bachelorette Party',
+      listTodo: [0],
+      listInProgress: [],
+      listDone: []
+    }
   ],
 
   cards: [
@@ -26,17 +29,36 @@ const initialState = {
     { id: 7, title: 'style your app' },
     { id: 8, title: 'finalize project' },
     { id: 9, title: 'book spa & hotel' }
-  ],
-
-  activeLists: []
+  ]
 }
 
-function rootReducer(state = initialState, action) {
+export const addProjectReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_PROJECT:
       return {
         projects: [
           ...state.projects,
+          {
+            id: action.id,
+            title: action.title,
+            listTodo: [],
+            listInProgress: [],
+            listDone: []
+          }
+        ]
+      }
+
+    default:
+      return state
+  }
+}
+
+export const addCardReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case ADD_CARD:
+      return {
+        cards: [
+          ...state.cards,
           {
             id: action.id,
             title: action.title
@@ -48,6 +70,4 @@ function rootReducer(state = initialState, action) {
       return state
   }
 }
-
-export default rootReducer;
 

@@ -1,28 +1,55 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Lists from './Lists';
 import DemoHeader from './DemoHeader';
+import ListTodo from './ListTodo';
+import ListInProgress from './ListInProgress';
+import ListDone from './ListDone';
 
 function mapStateToProps(state) {
   return {
     projects: state.projects,
     lists: state.lists,
+    cards: state.cards
   }
 }
 
 class DemoProjectItem extends Component {
 
-  renderProjectLists() {
+  renderTodoCards() {
     const activeProject = this.props.projects.find(p =>
       p.id == this.props.match.params.projectId
     )
 
-    const activeLists = activeProject.listIds.map(id =>
-      this.props.lists[id]
+    const todoCards = activeProject.listTodo.map(id =>
+      this.props.cards[id]
     )
 
-    return activeLists
+    return todoCards
+  }
+
+  renderInProgressCards() {
+    const activeProject = this.props.projects.find(p =>
+      p.id == this.props.match.params.projectId
+    )
+
+    const inProgressCards = activeProject.listInProgress.map(id =>
+      this.props.cards[id]
+    )
+
+    return inProgressCards
+  }
+
+  renderDoneCards() {
+    const activeProject = this.props.projects.find(p =>
+      p.id == this.props.match.params.projectId
+    )
+
+    const doneCards = activeProject.listDone.map(id =>
+      this.props.cards[id]
+    )
+
+    return doneCards
   }
 
   render() {
@@ -39,10 +66,11 @@ class DemoProjectItem extends Component {
             <h2>{project.title}</h2>
           </div>
 
-          <Lists
-            lists={this.renderProjectLists()}
-            cards={this.props.cards}
-          />
+          <ListTodo todoCards={this.renderTodoCards()} />
+
+          <ListInProgress inProgressCards={this.renderInProgressCards()} />
+
+          <ListDone doneCards={this.renderDoneCards()} />
 
         </main>
       </div>

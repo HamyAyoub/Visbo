@@ -4,31 +4,25 @@ import './Demo.css';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import CreateProject from './CreateProject';
 import uuid from 'uuid/v4';
-import store from '../../store/store';
-import addProject from '../../reducers/reducers';
+import addProject from '../../actions/actions';
 
 function mapStateToProps(state) {
   return {
-    projects: state.projects
+    projects: state.projects,
   };
 }
 
 class DemoProjectList extends Component {
-
-  updateFormInput(e) {
-
-  }
-
   handleSubmit(e) {
     e.preventDefault()
 
     let id = uuid()
     let title = e.target.title.value
 
-    store.dispatch(addProject(id, title))
+    this.props.dispatch(addProject(id, title))
 
+    this.formRef.reset();
   }
 
   render() {
@@ -51,12 +45,11 @@ class DemoProjectList extends Component {
             })}
           </ul>
           <div>
-            <form onSubmit={e => this.handleSubmit(e)}>
+            <form onSubmit={e => this.handleSubmit(e)} ref={el => this.formRef = el}>
               <label htmlFor='title'>
                 <input
                   type='text'
                   name='title'
-                  onChange={this.updateFormInput()}
                 />
               </label>
 
