@@ -4,6 +4,10 @@ import './Demo.css';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import CreateProject from './CreateProject';
+import uuid from 'uuid/v4';
+import store from '../../store/store';
+import addProject from '../../reducers/reducers';
 
 function mapStateToProps(state) {
   return {
@@ -12,6 +16,21 @@ function mapStateToProps(state) {
 }
 
 class DemoProjectList extends Component {
+
+  updateFormInput(e) {
+
+  }
+
+  handleSubmit(e) {
+    e.preventDefault()
+
+    let id = uuid()
+    let title = e.target.title.value
+
+    store.dispatch(addProject(id, title))
+
+  }
+
   render() {
     const { projects } = this.props;
 
@@ -32,7 +51,17 @@ class DemoProjectList extends Component {
             })}
           </ul>
           <div>
-            <button>Create new project</button>
+            <form onSubmit={e => this.handleSubmit(e)}>
+              <label htmlFor='title'>
+                <input
+                  type='text'
+                  name='title'
+                  onChange={this.updateFormInput()}
+                />
+              </label>
+
+              <button type='submit'>Create new project</button>
+            </form>
           </div>
         </main>
       </div>

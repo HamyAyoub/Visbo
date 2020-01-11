@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class BoardCards extends Component {
+class Cards extends Component {
   render() {
     return (
       <div>{this.props.cards.map(c =>
@@ -11,4 +11,4 @@ class BoardCards extends Component {
   }
 }
 
-export default BoardCards;
+export default Cards;

@@ -1,29 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import BoardLists from './BoardLists';
+import Lists from './Lists';
+import DemoHeader from './DemoHeader';
 
 function mapStateToProps(state) {
   return {
     projects: state.projects,
     lists: state.lists,
-    cards: state.cards,
-    boards: state.boards
   }
 }
 
 class DemoProjectItem extends Component {
 
-  renderBoardLists() {
+  renderProjectLists() {
     const activeProject = this.props.projects.find(p =>
       p.id == this.props.match.params.projectId
     )
 
-    const activeBoard = this.props.boards.find(b =>
-      b.id == activeProject.boardId
-    )
-
-    const activeLists = activeBoard.listIds.map(id =>
+    const activeLists = activeProject.listIds.map(id =>
       this.props.lists[id]
     )
 
@@ -36,18 +31,21 @@ class DemoProjectItem extends Component {
     )
 
     return (
-      <main className="demo-main">
-        <div>
-          <h2>{project.title}</h2>
-        </div>
+      <div>
+        <DemoHeader />
 
-        <h3>
-          <BoardLists
-            lists={this.renderBoardLists()}
+        <main className="demo-main">
+          <div>
+            <h2>{project.title}</h2>
+          </div>
+
+          <Lists
+            lists={this.renderProjectLists()}
             cards={this.props.cards}
           />
-        </h3>
-      </main>
+
+        </main>
+      </div>
     );
   }
 }

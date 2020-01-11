@@ -1,21 +1,18 @@
-import { createStore } from "redux";
+import { ADD_PROJECT } from '../actions/actions';
 
 const initialState = {
   projects: [
-    { id: 0, title: 'Fullstack Capstone', boardId: 0 },
-    { id: 1, title: 'Bachelorette Party', boardId: 1 }
-  ],
-
-  boards: [
-    { id: 0, listIds: [0, 1, 2] },
-    { id: 1, listIds: [3] }
+    { id: 0, title: 'Fullstack Capstone', listIds: [0, 1, 2] },
+    { id: 1, title: 'Bachelorette Party', listIds: [3, 4, 5] }
   ],
 
   lists: [
     { id: 0, title: 'To-do', cardIds: [5, 6, 7, 8] },
     { id: 1, title: 'In-progress', cardIds: [4] },
     { id: 2, title: 'Done', cardIds: [0, 1, 2, 3] },
-    { id: 3, title: 'To-do', cardIds: [9] }
+    { id: 3, title: 'To-do', cardIds: [9] },
+    { id: 4, title: 'In-progress', cardIds: [] },
+    { id: 6, title: 'Done', cardIds: [] }
   ],
 
   cards: [
@@ -34,10 +31,23 @@ const initialState = {
   activeLists: []
 }
 
-function reducer(state = initialState, action) {
-  return state;
+function rootReducer(state = initialState, action) {
+  switch (action.type) {
+    case ADD_PROJECT:
+      return {
+        projects: [
+          ...state.projects,
+          {
+            id: action.id,
+            title: action.title
+          }
+        ]
+      }
+
+    default:
+      return state
+  }
 }
 
-const store = createStore(reducer);
+export default rootReducer;
 
-export default store;

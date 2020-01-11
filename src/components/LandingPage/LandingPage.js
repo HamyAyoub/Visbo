@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import LandingMain from './landing-main';
+import LandingMain from './LandingMain';
 import LandingHeader from './LandingHeader';
 import LandingFooter from './LandingFooter';
 import './Landing.css';
