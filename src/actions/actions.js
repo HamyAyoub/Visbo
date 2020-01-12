@@ -3,7 +3,7 @@ export const ADD_CARD = 'ADD_CARD';
 
 // action creator for addProject, returns only plain object
 // actions define what changed NOT HOW
-function addProject(id, title) {
+export function addProject(id, title) {
   return {
     type: ADD_PROJECT,
     id,
@@ -11,7 +11,7 @@ function addProject(id, title) {
   }
 }
 
-function addCard(id, title) {
+export function addCard(id, title) {
   return {
     type: ADD_CARD,
     id,
@@ -19,4 +19,3 @@ function addCard(id, title) {
   }
 }
 
-export default (addProject, addCard)

@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import uuid from 'uuid/v4';
-import addProject from '../../actions/actions';
+import { addProject } from '../../actions/actions';
 
 function mapStateToProps(state) {
   return {
-    projects: state.projects,
+    projects: state.addProjectReducer.projects
   };
 }
 
@@ -34,7 +34,7 @@ class DemoProjectList extends Component {
 
         <main className='demo-main'>
           <ul className="projects-list">
-            {projects.map(p => {
+            {projects && projects.map(p => {
               return (
                 <li key={p.id}>
                   <Link to={`/demo-project/${p.id}`}>

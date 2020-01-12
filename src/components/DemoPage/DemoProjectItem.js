@@ -8,8 +8,7 @@ import ListDone from './ListDone';
 
 function mapStateToProps(state) {
   return {
-    projects: state.projects,
-    lists: state.lists,
+    projects: state.addProjectReducer.projects,
     cards: state.cards
   }
 }

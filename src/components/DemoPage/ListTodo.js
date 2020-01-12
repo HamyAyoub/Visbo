@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import uuid from 'uuid/v4';
-import addCard from '../../actions/actions';
+import { addCard } from '../../actions/actions';
 import { connect } from 'react-redux';
 
 function mapStateToProps(state) {
