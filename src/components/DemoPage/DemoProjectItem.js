@@ -9,7 +9,7 @@ import ListDone from './ListDone';
 function mapStateToProps(state) {
   return {
     projects: state.addProjectReducer.projects,
-    cards: state.cards
+    cards: state.addProjectReducer.cards
   }
 }
 
