@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
-class LandingHeader extends Component {
+class Header extends Component {
   render() {
     return (
       <header>
@@ -17,4 +17,4 @@ class LandingHeader extends Component {
   }
 }
 
-export default LandingHeader;
+export default Header;

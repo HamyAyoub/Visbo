@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import PropTypes from 'prop-types';
-import DemoHeader from './DemoHeader';
+import Header from './Header';
 import ListTodo from './ListTodo';
 import ListInProgress from './ListInProgress';
 import ListDone from './ListDone';
@@ -58,7 +58,7 @@ class DemoProjectItem extends Component {
 
     return (
       <div>
-        <DemoHeader />
+        <Header />
 
         <main className="demo-main">
           <div>

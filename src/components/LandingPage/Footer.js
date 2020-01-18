@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class LandingFooter extends Component {
+class Footer extends Component {
   render() {
     return (
       <footer>Copyright 2020</footer>
@@ -8,4 +8,4 @@ class LandingFooter extends Component {
   }
 }
 
-export default LandingFooter;
+export default Footer;

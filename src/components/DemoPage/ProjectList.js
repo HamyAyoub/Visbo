@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import DemoHeader from './DemoHeader';
+import Header from './Header';
 import './Demo.css';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -30,7 +30,7 @@ class DemoProjectList extends Component {
 
     return (
       <div>
-        <DemoHeader />
+        <Header />
 
         <main className='demo-main'>
           <ul className="projects-list">

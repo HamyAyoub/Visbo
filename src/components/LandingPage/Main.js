@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-class LandingMain extends Component {
+class Main extends Component {
   render() {
     return (
       <main className='landing-main'>
@@ -16,4 +16,4 @@ class LandingMain extends Component {
   }
 }
 
-export default LandingMain;
+export default Main;
