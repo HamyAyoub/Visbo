@@ -7,7 +7,7 @@ class ListInProgress extends Component {
         <ul>
           <h3>In-progress</h3>
           {this.props.inProgressCards.map(c =>
-            <li>
+            <li key={c.id}>
               {c.title}
             </li>
           )}

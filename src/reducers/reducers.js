@@ -32,6 +32,9 @@ const initialState = {
   ]
 }
 
+// reducer is a pure function that takes the previous state 
+// and an action, and returns the next state
+
 export const addProjectReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_PROJECT:

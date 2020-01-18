@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import DemoHeader from './DemoHeader';
 import ListTodo from './ListTodo';
 import ListInProgress from './ListInProgress';
@@ -8,8 +8,8 @@ import ListDone from './ListDone';
 
 function mapStateToProps(state) {
   return {
-    projects: state.addProjectReducer.projects,
-    cards: state.addProjectReducer.cards
+    projects: state.projects.projects,
+    cards: state.cards.cards
   }
 }
 
@@ -20,9 +20,9 @@ class DemoProjectItem extends Component {
       p.id == this.props.match.params.projectId
     )
 
-    const todoCards = activeProject.listTodo.map(id =>
-      this.props.cards[id]
-    )
+    const todoCards = activeProject.listTodo.map(id => {
+      return this.props.cards[id]
+    })
 
     return todoCards
   }
@@ -77,8 +77,8 @@ class DemoProjectItem extends Component {
   }
 }
 
-DemoProjectItem.propTypes = {
-  projects: PropTypes.array
-}
+// DemoProjectItem.propTypes = {
+//   projects: PropTypes.array
+// }
 
 export default connect(mapStateToProps)(DemoProjectItem);

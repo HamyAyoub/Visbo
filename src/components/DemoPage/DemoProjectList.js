@@ -3,13 +3,13 @@ import DemoHeader from './DemoHeader';
 import './Demo.css';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import uuid from 'uuid/v4';
 import { addProject } from '../../actions/actions';
 
 function mapStateToProps(state) {
   return {
-    projects: state.addProjectReducer.projects
+    projects: state.projects.projects
   };
 }
 
@@ -62,8 +62,8 @@ class DemoProjectList extends Component {
   }
 }
 
-DemoProjectList.propTypes = {
-  projects: PropTypes.array
-};
+// DemoProjectList.propTypes = {
+//   projects: PropTypes.array
+// };
 
 export default connect(mapStateToProps)(DemoProjectList);

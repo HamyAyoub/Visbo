@@ -2,7 +2,8 @@ import { addProjectReducer, addCardReducer } from './reducers';
 import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
-  addProjectReducer, addCardReducer
+  projects: addProjectReducer,
+  cards: addCardReducer
 })
 
 export default rootReducer;
