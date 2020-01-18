@@ -44,7 +44,7 @@ class DemoProjectItem extends Component {
     const activeProject = this.props.projects.find(p =>
       p.id == this.props.match.params.projectId
     )
-    console.log(activeProject)
+
     const doneCards = activeProject.listDone.map(id =>
       this.props.cards[id]
     )

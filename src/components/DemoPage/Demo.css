@@ -34,3 +34,12 @@
   width: min-content;
   margin-left: 10px
 }
+
+.todo-column, .in-progress-column, .done-column {
+  border: 1px solid #aaaaaa;
+  padding: 5px
+}
+
+.todo-column li, .in-progress-column li, .done-column li {
+  margin: 10px;
+}

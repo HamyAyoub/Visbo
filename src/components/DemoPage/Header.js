@@ -9,7 +9,7 @@ class DemoHeader extends Component {
         <nav>
           <ul>
             <NavLink to='/' className='logo'>Visbo</NavLink>
-            <li className='demo-nav-li'> + Add Project</li>
+            <NavLink to='/demo-project' className='demo-nav-li'>+ Add Project</NavLink>
             <li className='demo-nav-li'>Search</li>
             <NavLink to='/' className='demo-nav-li'>Home</NavLink>
           </ul>

@@ -69,6 +69,7 @@ export const addCardReducer = (state = initialState, action) => {
                   action.id
                 ]
               }
+
             })
           }
         ],
