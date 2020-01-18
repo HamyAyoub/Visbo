@@ -5,6 +5,7 @@ import Header from './Header';
 import ListTodo from './ListTodo';
 import ListInProgress from './ListInProgress';
 import ListDone from './ListDone';
+import './Demo.css';
 
 function mapStateToProps(state) {
   return {
@@ -43,7 +44,7 @@ class DemoProjectItem extends Component {
     const activeProject = this.props.projects.find(p =>
       p.id == this.props.match.params.projectId
     )
-
+    console.log(activeProject)
     const doneCards = activeProject.listDone.map(id =>
       this.props.cards[id]
     )
@@ -60,12 +61,13 @@ class DemoProjectItem extends Component {
       <div>
         <Header />
 
-        <main className="demo-main">
-          <div>
-            <h2>{project.title}</h2>
-          </div>
+        <div className='project-item-title'>
+          <h2>{project.title}</h2>
+        </div>
 
-          <ListTodo todoCards={this.renderTodoCards()} />
+        <main className="project-item-main">
+
+          <ListTodo projectId={project.id} todoCards={this.renderTodoCards()} />
 
           <ListInProgress inProgressCards={this.renderInProgressCards()} />
 

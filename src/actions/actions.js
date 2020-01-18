@@ -12,11 +12,12 @@ export function addProject(id, title) {
   }
 }
 
-export function addCard(id, title) {
+export function addCard(id, title, projectId) {
   return {
     type: ADD_CARD,
     id,
-    title
+    title,
+    projectId
   }
 }
 

@@ -8,8 +8,8 @@ class Header extends Component {
         <nav>
           <ul>
             <NavLink to='/' className='logo'>Visbo</NavLink>
-            <li className='landing-li'>Sign Up</li>
-            <NavLink to='/demo-project' className='landing-li'>Demo</NavLink>
+            <li className='landing-nav-li'>Sign Up</li>
+            <NavLink to='/demo-project' className='landing-nav-li'>Demo</NavLink>
           </ul>
         </nav>
       </header>

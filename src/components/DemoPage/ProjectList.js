@@ -32,7 +32,11 @@ class DemoProjectList extends Component {
       <div>
         <Header />
 
-        <main className='demo-main'>
+        <div className='project-list-title'>
+          <h2>Projects</h2>
+        </div>
+
+        <main className='project-list-main'>
           <ul className="projects-list">
             {projects && projects.map(p => {
               return (
@@ -45,7 +49,10 @@ class DemoProjectList extends Component {
             })}
           </ul>
           <div>
-            <form onSubmit={e => this.handleSubmit(e)} ref={el => this.formRef = el}>
+            <form
+              onSubmit={e => this.handleSubmit(e)}
+              ref={el => this.formRef = el}
+            >
               <label htmlFor='title'>
                 <input
                   type='text'

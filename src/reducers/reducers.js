@@ -60,6 +60,23 @@ export const addCardReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_CARD:
       return {
+        addCardToList = () => {
+          return {
+            projects: [
+              ...state.projects, {
+                projects: state.projects.map(p => {
+                  if (p.id === action.projectId) {
+                    return [
+                      ...p.listTodo,
+                      action.id
+                    ]
+                  }
+                })
+              }
+            ]
+          }
+        },
+
         cards: [
           ...state.cards,
           {
