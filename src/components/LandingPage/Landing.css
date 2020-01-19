@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+
 body {
   box-sizing: border-box;
   margin: 0;
@@ -29,6 +30,7 @@ nav {
   margin: 10px;
   color: #6774FF;
   height: 20px;
+  font-weight: 600;
 }
 
 .logo {
@@ -47,6 +49,7 @@ button {
   padding: 10px 15px;
   background-color: #FEBB46;
   color: white;
+  font-weight: 600;
 }
 
 /*  BACKGROUND IMG  */
@@ -68,7 +71,7 @@ footer {
   background-color: #E8E8E8;
   border-top-right-radius: 50px;
   border-top-left-radius: 50px;
-  z-index: -2;
+  z-index: -1;
 }
 
 .footer-wrapper {
@@ -97,9 +100,6 @@ footer {
   top: 300px;
   left: 0;
   right: 0;
-  /* border: solid 0.5px rgba(000,0,0,0.1);
-  background-color: rgba(000,0,0,0.1);
-  padding-bottom: 60px */
 }
 
 .landing-main-inner-wrapper .headline {  
@@ -109,13 +109,6 @@ footer {
 
 @media screen and (min-width: 600px) {
   
-  .landing-main-inner-wrapper {
-    text-align: left;
-    float: left;
-    top: 100px;
-    left: 20px;
-  }
-
   .landing-main-inner-wrapper .headline {
     font-size: 50px;
   }
@@ -124,26 +117,40 @@ footer {
     font-size: 25px;
   }
 
-  /*  BACKGROUND IMG  */
-   .scrum-board {
+  .scrum-board {
     width: 400px;
-  }
-
-  .scrum-board-wrapper {
-    float: right;
+    margin-top: 0;
   }
 
 }
 
-@media screen and (min-width: 700px) {
-
-    /*  BACKGROUND IMG  */
-  .scrum-board {
-    width: 500px;
-  }
+@media screen and (min-width: 750px) {
 
   .landing-main-inner-wrapper {
+    text-align: left;
     top: 100px;
     left: 100px;
   }
+
+  .scrum-board-wrapper {
+    float: right;
+    margin-top: 150px;
+    margin-right: 100px;
+  }
+
+  footer {
+    left: 150px;
+    right: 150px;
+  }
+
+  nav {
+    margin-left: 150px;
+    margin-right: 150px;
+  }
+
+}
+
+@media screen and (min-width: 1200px) {
+
+
 }
