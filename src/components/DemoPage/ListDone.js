@@ -1,7 +1,21 @@
 import React, { Component } from 'react';
 import './Demo.css';
+import uuid from 'uuid/v4';
+import { addCard } from '../../actions/actions';
 
 class ListDone extends Component {
+  handleSubmit(e) {
+    e.preventDefault()
+
+    let id = uuid()
+    let title = e.target.title.value
+    let projectId = this.props.projectId
+
+    this.props.dispatch(addCard(id, title, projectId))
+
+    this.formRef.reset();
+  }
+
   allowDrop(e) {
     e.preventDefault();
   }
@@ -18,7 +32,7 @@ class ListDone extends Component {
 
   render() {
     return (
-      <div>
+      <div className='list-done-wrapper'>
         <ul className='list-done'>
           <h3>Done</h3>
           <div className='done-column' onDrop={e => this.drop(e)} onDragOver={e => this.allowDrop(e)}>
@@ -29,6 +43,20 @@ class ListDone extends Component {
             )}
           </div>
         </ul>
+
+        <form
+          onSubmit={e => this.handleSubmit(e)}
+          ref={el => this.formRef = el}
+          className='add-card-form'
+        >
+          <label htmlFor='title'>
+            <input
+              type='text'
+              name='title'
+              placeholder='Add a card'
+            />
+          </label>
+        </form>
       </div>
     );
   }

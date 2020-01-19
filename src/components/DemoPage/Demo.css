@@ -1,18 +1,21 @@
+/* HEADER */
 .demo-nav-li {
   float: right;
-  padding-left: 10px;
+  margin-left: 10px
 }
+
+.demo-nav-li:hover {
+  border-bottom: 3px solid #6094D6;
+}
+
+/* PROJECT LIST */
 
 .project-list-main {
   text-align: left;
-  clear: both;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.project-item-main {
-  display: flex;
-  justify-content: space-around;
+  background-color: rgba(166,195,232, 0.5);
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
 }
 
 .project-list-title, .project-item-title {
@@ -22,24 +25,69 @@
   margin-left: 10px;
 }
 
-.list-todo, .list-done, .list-in-progress {
-  text-align: left;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-top: 0;
+
+/* PROJECT ITEM */
+
+.project-item-main {
+  display: flex;
+  justify-content: space-around;
 }
+
+
+.project-item-main {
+  background-image: linear-gradient(rgba(166,195,232, 0.5), #6094D6);
+  border-radius: 10px;
+}
+
+.project-item-main h3 {
+  color: #102F96;
+}
+
+/* FORMS */
 
 
 .add-card-form {
-  width: min-content;
-  margin-left: 10px
+  padding-bottom: 10px;
+  text-align: left;
 }
 
-.todo-column, .in-progress-column, .done-column {
-  border: 1px solid #aaaaaa;
-  padding: 5px
+.add-card-form input, .add-project-form input {
+  width: 100px;
+  border: none;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: inherit;
 }
 
-.todo-column li, .in-progress-column li, .done-column li {
-  margin: 10px;
+/* LISTS */
+
+.list-todo, .list-done, .list-doing {
+  text-align: left;
+}
+
+.list-todo-wrapper, .list-done-wrapper, .list-doing-wrapper {
+  background-color: #E5E7E9;
+  border-radius: 10px;
+  margin: 5px;
+  width: 30%;
+}
+
+.todo-column li, .doing-column li, .done-column li {
+  background-color: #FBFBFC;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 5px;
+}
+
+/*  IMAGES */
+
+.scrum-setup-board {
+  width: 70%
+}
+
+.scrum-setup-board-wrapper {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
 }

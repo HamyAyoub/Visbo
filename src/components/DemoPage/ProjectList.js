@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 // import PropTypes from 'prop-types';
 import uuid from 'uuid/v4';
 import { addProject } from '../../actions/actions';
+import scrumSetupBoard from '../../images/scrum-setup-board.jpg'
 
 function mapStateToProps(state) {
   return {
@@ -27,16 +28,16 @@ class DemoProjectList extends Component {
 
   render() {
     const { projects } = this.props;
-
     return (
       <div>
-        <Header />
+        <Header path={this.props.match.path} />
 
         <div className='project-list-title'>
           <h2>Projects</h2>
         </div>
 
         <main className='project-list-main'>
+
           <ul className="projects-list">
             {projects && projects.map(p => {
               return (
@@ -52,18 +53,21 @@ class DemoProjectList extends Component {
             <form
               onSubmit={e => this.handleSubmit(e)}
               ref={el => this.formRef = el}
+              className='add-project-form'
             >
               <label htmlFor='title'>
                 <input
                   type='text'
                   name='title'
+                  placeholder='Create a project'
                 />
               </label>
-
-              <button type='submit'>Create new project</button>
             </form>
           </div>
         </main>
+        <div className='scrum-setup-board-wrapper'>
+          <img src={scrumSetupBoard} alt="scrum-setup-board" className="scrum-setup-board" />
+        </div>
       </div>
     );
   }

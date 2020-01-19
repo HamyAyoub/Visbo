@@ -13,18 +13,8 @@ a {
   color: inherit
 }
 
-button {
-  border: none;
-  border: solid 1px black;
-  background-color: inherit;
-  border-radius: 30px;
-  padding: 10px 15px;
-}
-
-.btn {
-  border: solid 1px black;
-  border-radius: 30px;
-  padding: 10px 15px;
+.landing-nav-li:hover {
+  border-bottom: 3px solid #6094D6;
 }
 
 ul {
@@ -34,6 +24,7 @@ ul {
 
 nav {
   margin: 10px;
+  color: #0E1F6D
 }
 
 .logo {
@@ -41,25 +32,114 @@ nav {
   padding-left: 0;
 }
 
-.landing-nav-li {
-  float: right;
-  padding-left: 10px;
+button {
+  border: none;
+  border-radius: 20px;
+  padding: 10px 15px;
 }
 
-.landing-main {
+.btn {
+  border-radius: 30px;
+  padding: 10px 15px;
+  background-color: #102F96;
+  color: #FBFBFC;
+}
+
+/*  BACKGROUND IMG  */
+.scrum-board {
+  margin-top: 50px;
+  width: 350px;
+}
+
+.scrum-board-wrapper {
   clear: both;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding-top: 100px;
 }
 
 footer {
   position: fixed;
-  bottom: 10px;
+  bottom: -50px;
+  height: 250px;
+  left: 0;
+  right: 0;
+  background-color: rgba(166,195,232, 0.5);
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+  z-index: -2;
+}
+
+.footer-wrapper {
+  position: fixed;
+  bottom: 50px;
   left: 0;
   right: 0;
 }
 
+.footer-wrapper h3 {
+  color: #6094D6;
+  margin-top: 30px;
+  margin-bottom: 10px
+}
+
+.landing-nav-li {
+  float: right;
+}
+
+.demo {
+  margin-right: 10px
+}
+
+.landing-main-inner-wrapper {
+  position: absolute;
+  top: 300px;
+  left: 0;
+  right: 0;
+  /* border: solid 0.5px rgba(000,0,0,0.1);
+  background-color: rgba(000,0,0,0.1);
+  padding-bottom: 60px */
+}
+
+.landing-main-inner-wrapper .headline {  
+  color: #102F96;
+}
+
+
 @media screen and (min-width: 600px) {
   
+  .landing-main-inner-wrapper {
+    text-align: left;
+    float: left;
+    top: 100px;
+    left: 20px;
+  }
+
+  .landing-main-inner-wrapper .headline {
+    font-size: 50px;
+  }
+
+  .landing-main-inner-wrapper h3 {
+    font-size: 25px;
+  }
+
+  /*  BACKGROUND IMG  */
+   .scrum-board {
+    width: 400px;
+  }
+
+  .scrum-board-wrapper {
+    float: right;
+  }
+
+}
+
+@media screen and (min-width: 700px) {
+
+    /*  BACKGROUND IMG  */
+  .scrum-board {
+    width: 500px;
+  }
+
+  .landing-main-inner-wrapper {
+    top: 100px;
+    left: 100px;
+  }
 }

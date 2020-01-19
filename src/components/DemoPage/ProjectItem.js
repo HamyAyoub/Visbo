@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 // import PropTypes from 'prop-types';
 import Header from './Header';
 import ListTodo from './ListTodo';
-import ListInProgress from './ListInProgress';
+import ListDoing from './ListDoing';
 import ListDone from './ListDone';
 import './Demo.css';
 
@@ -69,7 +69,7 @@ class DemoProjectItem extends Component {
 
           <ListTodo projectId={project.id} todoCards={this.renderTodoCards()} />
 
-          <ListInProgress inProgressCards={this.renderInProgressCards()} />
+          <ListDoing inProgressCards={this.renderInProgressCards()} />
 
           <ListDone doneCards={this.renderDoneCards()} />
 

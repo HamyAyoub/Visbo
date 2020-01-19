@@ -9,6 +9,7 @@ class App extends Component {
   render() {
     return (
       <Switch>
+
         <Route exact path='/' component={Landing} />
 
         <Route exact path='/demo-project' component={ProjectList} />
@@ -16,6 +17,7 @@ class App extends Component {
         <Route path='/demo-project/:projectId' component={ProjectItem} />
 
         <Route component={PageNotFound} />
+
       </Switch>
     );
   }

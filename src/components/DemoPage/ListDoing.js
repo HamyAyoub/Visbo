@@ -1,16 +1,9 @@
 import React, { Component } from 'react';
+import './Demo.css';
 import uuid from 'uuid/v4';
 import { addCard } from '../../actions/actions';
-import { connect } from 'react-redux';
-import './Demo.css';
 
-function mapStateToProps(state) {
-  return {
-    cards: state.cards.cards,
-  };
-}
-
-class ListTodo extends Component {
+class ListDoing extends Component {
   handleSubmit(e) {
     e.preventDefault()
 
@@ -28,7 +21,6 @@ class ListTodo extends Component {
   }
 
   drag(e) {
-    console.log(e.target.id)
     e.dataTransfer.setData("text", e.target.id);
   }
 
@@ -40,17 +32,14 @@ class ListTodo extends Component {
 
   render() {
     return (
-      <div className='list-todo-wrapper'>
-        <ul className='list-todo'>
-          <h3>To-do</h3>
-          <div className='todo-column' onDrop={e => this.drop(e)} onDragOver={e => this.allowDrop(e)}>
-            {this.props.todoCards.map(c => {
-              return (
-                <li key={c.id} id={c.id} draggable="true" onDragStart={e => this.drag(e)}>
-                  {c.title}
-                </li>
-              )
-            }
+      <div className='list-doing-wrapper'>
+        <ul className='list-doing'>
+          <h3>Doing</h3>
+          <div className='doing-column' onDrop={e => this.drop(e)} onDragOver={e => this.allowDrop(e)}>
+            {this.props.inProgressCards.map(c =>
+              <li key={c.id} id={c.id} draggable="true" onDragStart={e => this.drag(e)}>
+                {c.title}
+              </li>
             )}
           </div>
         </ul>
@@ -73,4 +62,4 @@ class ListTodo extends Component {
   }
 }
 
-export default connect(mapStateToProps)(ListTodo);
+export default ListDoing;

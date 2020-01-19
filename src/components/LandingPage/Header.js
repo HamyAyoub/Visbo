@@ -7,9 +7,9 @@ class Header extends Component {
       <header>
         <nav>
           <ul>
-            <NavLink to='/' className='logo'>Visbo</NavLink>
+            <NavLink to='/' className='logo'>visbo</NavLink>
             <li className='landing-nav-li'>Sign Up</li>
-            <NavLink to='/demo-project' className='landing-nav-li'>Demo</NavLink>
+            <NavLink to='/demo-project' className='landing-nav-li demo'>Demo</NavLink>
           </ul>
         </nav>
       </header>
