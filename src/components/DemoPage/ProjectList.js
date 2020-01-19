@@ -28,6 +28,7 @@ class DemoProjectList extends Component {
 
   render() {
     const { projects } = this.props;
+
     return (
       <div>
         <Header path={this.props.match.path} />

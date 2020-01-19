@@ -15,7 +15,6 @@ function mapStateToProps(state) {
 }
 
 class DemoProjectItem extends Component {
-
   renderTodoCards() {
     const activeProject = this.props.projects.find(p =>
       p.id == this.props.match.params.projectId

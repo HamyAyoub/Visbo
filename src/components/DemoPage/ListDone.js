@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import './Demo.css';
 import uuid from 'uuid/v4';
 import { addCard } from '../../actions/actions';
+import { connect } from 'react-redux';
+
+function mapStateToProps(state) {
+  return {
+    cards: state.cards.cards,
+  };
+}
 
 class ListDone extends Component {
   handleSubmit(e) {
@@ -62,4 +69,4 @@ class ListDone extends Component {
   }
 }
 
-export default ListDone;
+export default connect(mapStateToProps)(ListDone);

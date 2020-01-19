@@ -60,11 +60,13 @@ export const addCardReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_CARD:
       return {
+        ...state,
         cards: [
-          state.cards.push({
+          ...state.cards,
+          {
             id: action.id,
             title: action.title
-          })
+          }
         ],
 
         projects: [
@@ -73,10 +75,12 @@ export const addCardReducer = (state = initialState, action) => {
               if (p.id === action.projectId) {
                 p.listTodo.push(action.id)
               }
+
+              return p
             })
           }
         ]
-      }, console.log(state)
+      }
 
     default:
       return state

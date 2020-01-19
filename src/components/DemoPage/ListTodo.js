@@ -14,7 +14,7 @@ class ListTodo extends Component {
   handleSubmit(e) {
     e.preventDefault()
 
-    let id = uuid()
+    let id = 100
     let title = e.target.title.value
     let projectId = this.props.projectId
 
@@ -28,7 +28,6 @@ class ListTodo extends Component {
   }
 
   drag(e) {
-    console.log(e.target.id)
     e.dataTransfer.setData("text", e.target.id);
   }
 
