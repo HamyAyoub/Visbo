@@ -10,21 +10,50 @@
 
 /* PROJECT LIST */
 
+.project-list h3 {
+  color: #01008A;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;;
+}
+
 .project-list-main {
   text-align: left;
-  background-color: rgba(166,195,232, 0.5);
+  background-color: rgba(227,227,227,0.8);
   border-radius: 10px;
-  margin: 10px;
   padding: 10px;
+  height: auto;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project-list {
+  border-radius: 10px;
+  padding: 10px;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 .project-list-title, .project-item-title {
   clear: both;
   text-align: left;
   padding-top: 50px;
-  margin-left: 10px;
 }
 
+.project-list-title h2, .project-item-title h2 {
+  background-color: #FEBB46;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  width: 300px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.project-item-title h2 {
+  width: 90%;
+}
 
 /* PROJECT ITEM */
 
@@ -33,30 +62,56 @@
   justify-content: space-around;
 }
 
-
-.project-item-main {
-  background-image: linear-gradient(rgba(166,195,232, 0.5), #6094D6);
+.project-item-main h3 {
+  background-color: #FF911E;
+  color: white;
   border-radius: 10px;
+  padding: 8px;
+  margin: 10px;
 }
 
-.project-item-main h3 {
-  color: #102F96;
+
+.project-item-main {
+  background-color: rgba(103,116,255, 0.7);
+  border-radius: 10px;
+  padding: 10px;
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 /* FORMS */
 
-
 .add-card-form {
-  padding-bottom: 10px;
   text-align: left;
 }
 
 .add-card-form input, .add-project-form input {
-  width: 100px;
+  width: 120px;
   border: none;
   padding: 5px;
   border-radius: 10px;
   background-color: inherit;
+  font-size: 1.17em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  outline: none;
+  font-family: 'Nunito', sans-serif;
+}
+
+.add-project-form input {
+  width: 200px;
+}
+
+.add-card-form input {
+  font-size: 16px;;
+}
+
+.add-card-form input::placeholder, .add-project-form input::placeholder {
+  color: #FFD648;
 }
 
 /* LISTS */
@@ -66,28 +121,56 @@
 }
 
 .list-todo-wrapper, .list-done-wrapper, .list-doing-wrapper {
-  background-color: #E5E7E9;
+  background-image: linear-gradient(#DFDFDF, white);
   border-radius: 10px;
   margin: 5px;
   width: 30%;
 }
 
 .todo-column li, .doing-column li, .done-column li {
-  background-color: #FBFBFC;
+  background-color: white;
   border-radius: 10px;
-  margin: 5px;
+  margin: 10px;
   padding: 5px;
 }
 
 /*  IMAGES */
 
-.scrum-setup-board {
-  width: 70%
+.scrum-board2 {
+  width: 100%
 }
 
-.scrum-setup-board-wrapper {
-  position: fixed;
-  bottom: 0;
+.scrum-board2-wrapper {
+  position: absolute;
+  /* top: 100px; */
+  bottom: -30px;
   right: 0;
+  left: 0;
   z-index: -1;
+  padding-top: 30px
+}
+
+
+@media screen and (min-width: 500px) {
+
+  .scrum-board2-wrapper {
+    
+  }
+ 
+  .project-list-main, .project-list-title h2 {
+    width: 450px;
+  }
+}
+
+
+@media screen and (min-width: 800px) {
+
+  .project-list-main, .project-list-title h2 {
+    width: 750px;
+    box-shadow: 0 100px 80px rgba(0, 0, 0, 0.12);
+  }
+
+  .scrum-board2 {
+    width: 1000px
+  }
 }

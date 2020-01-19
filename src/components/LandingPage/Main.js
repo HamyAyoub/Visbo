@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import scrumBoard from '../../images/scrum_masters.jpg';
+import scrumBoard from '../../images/scrum-board.jpg';
 
 class Main extends Component {
   render() {

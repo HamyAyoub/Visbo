@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 // import PropTypes from 'prop-types';
 import uuid from 'uuid/v4';
 import { addProject } from '../../actions/actions';
-import scrumSetupBoard from '../../images/scrum-setup-board.jpg'
+import scrumBoard2 from '../../images/scrum-board2.jpg'
 
 function mapStateToProps(state) {
   return {
@@ -14,7 +14,7 @@ function mapStateToProps(state) {
   };
 }
 
-class DemoProjectList extends Component {
+class ProjectList extends Component {
   handleSubmit(e) {
     e.preventDefault()
 
@@ -30,7 +30,7 @@ class DemoProjectList extends Component {
     const { projects } = this.props;
 
     return (
-      <div>
+      <div className='project-list-wrapper'>
         <Header path={this.props.match.path} />
 
         <div className='project-list-title'>
@@ -39,7 +39,7 @@ class DemoProjectList extends Component {
 
         <main className='project-list-main'>
 
-          <ul className="projects-list">
+          <ul className="project-list">
             {projects && projects.map(p => {
               return (
                 <li key={p.id}>
@@ -60,22 +60,22 @@ class DemoProjectList extends Component {
                 <input
                   type='text'
                   name='title'
-                  placeholder='Create a project'
+                  placeholder='Create a project..'
                 />
               </label>
             </form>
           </div>
         </main>
-        <div className='scrum-setup-board-wrapper'>
-          <img src={scrumSetupBoard} alt="scrum-setup-board" className="scrum-setup-board" />
+        <div className='scrum-board2-wrapper'>
+          <img src={scrumBoard2} alt="scrum-board" className="scrum-board2" />
         </div>
       </div>
     );
   }
 }
 
-// DemoProjectList.propTypes = {
+// ProjectList.propTypes = {
 //   projects: PropTypes.array
 // };
 
-export default connect(mapStateToProps)(DemoProjectList);
+export default connect(mapStateToProps)(ProjectList);

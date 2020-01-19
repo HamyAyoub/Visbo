@@ -6,6 +6,7 @@ import ListTodo from './ListTodo';
 import ListDoing from './ListDoing';
 import ListDone from './ListDone';
 import './Demo.css';
+import scrumBoard2 from '../../images/scrum-person.jpg'
 
 function mapStateToProps(state) {
   return {
@@ -14,14 +15,14 @@ function mapStateToProps(state) {
   }
 }
 
-class DemoProjectItem extends Component {
+class ProjectItem extends Component {
   renderTodoCards() {
     const activeProject = this.props.projects.find(p =>
       p.id == this.props.match.params.projectId
     )
 
     const todoCards = activeProject.listTodo.map(id => {
-      return this.props.cards[id]
+      return this.props.cards.find(x => x.id === id);
     })
 
     return todoCards
@@ -73,13 +74,17 @@ class DemoProjectItem extends Component {
           <ListDone doneCards={this.renderDoneCards()} />
 
         </main>
+
+        <div className='scrum-board2-wrapper'>
+          <img src={scrumBoard2} alt="scrum-board" className="scrum-board2" />
+        </div>
       </div>
     );
   }
 }
 
-// DemoProjectItem.propTypes = {
+// ProjectItem.propTypes = {
 //   projects: PropTypes.array
 // }
 
-export default connect(mapStateToProps)(DemoProjectItem);
+export default connect(mapStateToProps)(ProjectItem);
