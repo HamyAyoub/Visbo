@@ -1,4 +1,6 @@
-import { ADD_PROJECT, ADD_CARD } from '../actions/actions';
+import {
+  ADD_PROJECT, ADD_CARD_TO_TODO, ADD_CARD_TO_DOING, ADD_CARD_TO_DONE
+} from '../actions/actions';
 
 const initialState = {
   projects: [
@@ -6,14 +8,14 @@ const initialState = {
       id: 0,
       title: 'Fullstack Capstone',
       listTodo: [5, 6, 7, 8],
-      listInProgress: [4],
+      listDoing: [4],
       listDone: [0, 1, 2, 3]
     },
     {
       id: 1,
       title: 'Bachelorette Party',
-      listTodo: [0],
-      listInProgress: [],
+      listTodo: [9],
+      listDoing: [],
       listDone: []
     }
   ],
@@ -39,17 +41,18 @@ export const addProjectReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_PROJECT:
       return {
+        ...state,
         projects: [
           ...state.projects,
           {
             id: action.id,
             title: action.title,
-            listTodo: [],
-            listInProgress: [],
-            listDone: []
+            listTodo: action.listTodo,
+            listDoing: action.listDoing,
+            listDone: action.listDone
           }
         ]
-      }
+      }, console.log(action)
 
     default:
       return state
@@ -58,7 +61,7 @@ export const addProjectReducer = (state = initialState, action) => {
 
 export const addCardReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_CARD:
+    case ADD_CARD_TO_TODO:
       return {
         ...state,
         cards: [
@@ -74,6 +77,54 @@ export const addCardReducer = (state = initialState, action) => {
             projects: state.projects.map(p => {
               if (p.id === action.projectId) {
                 p.listTodo.push(action.id)
+              }
+
+              return p
+            })
+          }
+        ]
+      };
+
+    case ADD_CARD_TO_DOING:
+      return {
+        ...state,
+        cards: [
+          ...state.cards,
+          {
+            id: action.id,
+            title: action.title
+          }
+        ],
+
+        projects: [
+          ...state.projects, {
+            projects: state.projects.map(p => {
+              if (p.id === action.projectId) {
+                p.listDoing.push(action.id)
+              }
+
+              return p
+            })
+          }
+        ]
+      };
+
+    case ADD_CARD_TO_DONE:
+      return {
+        ...state,
+        cards: [
+          ...state.cards,
+          {
+            id: action.id,
+            title: action.title
+          }
+        ],
+
+        projects: [
+          ...state.projects, {
+            projects: state.projects.map(p => {
+              if (p.id === action.projectId) {
+                p.listDone.push(action.id)
               }
 
               return p

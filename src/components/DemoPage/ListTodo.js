@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import uuid from 'uuid/v4';
-import { addCard } from '../../actions/actions';
+import { addCardTodo } from '../../actions/actions';
 import { connect } from 'react-redux';
 import './Demo.css';
 
@@ -14,11 +14,11 @@ class ListTodo extends Component {
   handleSubmit(e) {
     e.preventDefault()
 
-    let id = 100
+    let id = uuid()
     let title = e.target.title.value
     let projectId = this.props.projectId
 
-    this.props.dispatch(addCard(id, title, projectId))
+    this.props.dispatch(addCardTodo(id, title, projectId))
 
     this.formRef.reset();
   }
@@ -38,12 +38,14 @@ class ListTodo extends Component {
   }
 
   render() {
+    const { todoCards } = this.props
+
     return (
       <div className='list-todo-wrapper'>
         <ul className='list-todo'>
           <h3>To-do</h3>
           <div className='todo-column' onDrop={e => this.drop(e)} onDragOver={e => this.allowDrop(e)}>
-            {this.props.todoCards.map(c => {
+            {todoCards && todoCards.map(c => {
               return (
                 <li key={c.id} id={c.id} draggable="true" onDragStart={e => this.drag(e)}>
                   {c.title}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Demo.css';
 import uuid from 'uuid/v4';
-import { addCard } from '../../actions/actions';
+import { addCardDone } from '../../actions/actions';
 import { connect } from 'react-redux';
 
 function mapStateToProps(state) {
@@ -18,7 +18,7 @@ class ListDone extends Component {
     let title = e.target.title.value
     let projectId = this.props.projectId
 
-    this.props.dispatch(addCard(id, title, projectId))
+    this.props.dispatch(addCardDone(id, title, projectId))
 
     this.formRef.reset();
   }
@@ -38,12 +38,14 @@ class ListDone extends Component {
   }
 
   render() {
+    const { doneCards } = this.props
+
     return (
       <div className='list-done-wrapper'>
         <ul className='list-done'>
           <h3>Done</h3>
           <div className='done-column' onDrop={e => this.drop(e)} onDragOver={e => this.allowDrop(e)}>
-            {this.props.doneCards.map(c =>
+            {doneCards && doneCards.map(c =>
               <li key={c.id} id={c.id} draggable="true" onDragStart={e => this.drag(e)}>
                 {c.title}
               </li>

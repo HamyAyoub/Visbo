@@ -21,23 +21,23 @@ class ProjectItem extends Component {
       p.id == this.props.match.params.projectId
     )
 
-    const todoCards = activeProject.listTodo.map(id => {
-      return this.props.cards.find(x => x.id === id);
-    })
+    const todoCards = activeProject.listTodo && activeProject.listTodo.map(id =>
+      this.props.cards.find(x => x.id === id)
+    )
 
     return todoCards
   }
 
-  renderInProgressCards() {
+  renderDoingCards() {
     const activeProject = this.props.projects.find(p =>
       p.id == this.props.match.params.projectId
     )
 
-    const inProgressCards = activeProject.listInProgress.map(id =>
-      this.props.cards[id]
+    const doingCards = activeProject.listDoing && activeProject.listDoing.map(id =>
+      this.props.cards.find(x => x.id === id)
     )
 
-    return inProgressCards
+    return doingCards
   }
 
   renderDoneCards() {
@@ -45,8 +45,8 @@ class ProjectItem extends Component {
       p.id == this.props.match.params.projectId
     )
 
-    const doneCards = activeProject.listDone.map(id =>
-      this.props.cards[id]
+    const doneCards = activeProject.listDone && activeProject.listDone.map(id =>
+      this.props.cards.find(x => x.id === id)
     )
 
     return doneCards
@@ -69,9 +69,9 @@ class ProjectItem extends Component {
 
           <ListTodo projectId={project.id} todoCards={this.renderTodoCards()} />
 
-          <ListDoing inProgressCards={this.renderInProgressCards()} />
+          <ListDoing projectId={project.id} doingCards={this.renderDoingCards()} />
 
-          <ListDone doneCards={this.renderDoneCards()} />
+          <ListDone projectId={project.id} doneCards={this.renderDoneCards()} />
 
         </main>
 
