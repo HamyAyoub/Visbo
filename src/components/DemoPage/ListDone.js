@@ -45,7 +45,7 @@ class ListDone extends Component {
         <ul className='list-done'>
           <h3>Done</h3>
           <div className='done-column' onDrop={e => this.drop(e)} onDragOver={e => this.allowDrop(e)}>
-            {doneCards && doneCards.map(c =>
+            {doneCards.map(c =>
               <li key={c.id} id={c.id} draggable="true" onDragStart={e => this.drag(e)}>
                 {c.title}
               </li>

@@ -17,7 +17,9 @@ class ListTodo extends Component {
     let id = uuid()
     let title = e.target.title.value
     let projectId = this.props.projectId
-
+    console.log(projectId)
+    console.log(title)
+    console.log(id)
     this.props.dispatch(addCardTodo(id, title, projectId))
 
     this.formRef.reset();
@@ -45,7 +47,7 @@ class ListTodo extends Component {
         <ul className='list-todo'>
           <h3>To-do</h3>
           <div className='todo-column' onDrop={e => this.drop(e)} onDragOver={e => this.allowDrop(e)}>
-            {todoCards && todoCards.map(c => {
+            {todoCards.map(c => {
               return (
                 <li key={c.id} id={c.id} draggable="true" onDragStart={e => this.drag(e)}>
                   {c.title}

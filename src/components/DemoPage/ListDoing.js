@@ -45,7 +45,7 @@ class ListDoing extends Component {
         <ul className='list-doing'>
           <h3>Doing</h3>
           <div className='doing-column' onDrop={e => this.drop(e)} onDragOver={e => this.allowDrop(e)}>
-            {doingCards && doingCards.map(c =>
+            {doingCards.map(c =>
               <li key={c.id} id={c.id} draggable="true" onDragStart={e => this.drag(e)}>
                 {c.title}
               </li>
