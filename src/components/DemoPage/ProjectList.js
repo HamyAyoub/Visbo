@@ -9,6 +9,7 @@ import { addProject } from '../../actions/actions';
 import scrumBoard2 from '../../images/scrum-board2.jpg'
 
 function mapStateToProps(state) {
+  console.log(state)
   return {
     projects: state.projects.projects
   };
@@ -40,7 +41,7 @@ class ProjectList extends Component {
         <main className='project-list-main'>
 
           <ul className="project-list">
-            {projects && projects.map(p => {
+            {projects.map(p => {
               return (
                 <li key={p.id}>
                   <Link to={`/demo-project/${p.id}`}>

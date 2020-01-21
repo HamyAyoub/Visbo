@@ -17,9 +17,7 @@ class ListTodo extends Component {
     let id = uuid()
     let title = e.target.title.value
     let projectId = this.props.projectId
-    console.log(projectId)
-    console.log(title)
-    console.log(id)
+
     this.props.dispatch(addCardTodo(id, title, projectId))
 
     this.formRef.reset();

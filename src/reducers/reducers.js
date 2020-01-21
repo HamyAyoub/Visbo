@@ -1,7 +1,6 @@
 import {
   ADD_PROJECT, ADD_CARD_TO_TODO, ADD_CARD_TO_DOING, ADD_CARD_TO_DONE
 } from '../actions/actions';
-import { connect } from 'react-redux';
 
 const initialState = {
   projects: [
@@ -63,15 +62,6 @@ export const addCardReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_CARD_TO_TODO:
       return {
-        ...state,
-        cards: [
-          ...state.cards,
-          {
-            id: action.id,
-            title: action.title
-          }
-        ],
-
         projects: [
           ...state.projects, {
             projects: state.projects.map(p => {
@@ -82,12 +72,19 @@ export const addCardReducer = (state = initialState, action) => {
               return p
             })
           }
+        ],
+
+        cards: [
+          ...state.cards,
+          {
+            id: action.id,
+            title: action.title
+          }
         ]
       };
 
     case ADD_CARD_TO_DOING:
       return {
-        ...state,
         cards: [
           ...state.cards,
           {
@@ -111,7 +108,6 @@ export const addCardReducer = (state = initialState, action) => {
 
     case ADD_CARD_TO_DONE:
       return {
-        ...state,
         cards: [
           ...state.cards,
           {
