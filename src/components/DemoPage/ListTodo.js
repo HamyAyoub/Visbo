@@ -6,6 +6,7 @@ import './Demo.css';
 
 function mapStateToProps(state) {
   return {
+    projects: state.projects.projects,
     cards: state.cards.cards,
   };
 }

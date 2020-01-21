@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 
 function mapStateToProps(state) {
   return {
+    projects: state.projects.projects,
     cards: state.cards.cards,
   };
 }

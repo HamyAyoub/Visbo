@@ -59,75 +59,77 @@ export const addProjectReducer = (state = initialState, action) => {
 }
 
 export const addCardReducer = (state = initialState, action) => {
+  let updatedStateForTodoList = {
+    projects: [
+      ...state.projects, state.projects.map(p => {
+        if (p.id == action.projectId) {
+          p.listTodo.push(action.id)
+        }
+
+        return p
+      })
+    ],
+
+    cards: [
+      ...state.cards,
+      {
+        id: action.id,
+        title: action.title
+      }
+    ]
+  }
+
+  let updatedStateForDoingList = {
+    cards: [
+      ...state.cards,
+      {
+        id: action.id,
+        title: action.title
+      }
+    ],
+
+    projects: [
+      ...state.projects, state.projects.map(p => {
+        if (p.id === action.projectId) {
+          p.listDoing.push(action.id)
+        }
+
+        return p
+      })
+    ]
+  }
+
+  let updatedStateForDoneList = {
+    cards: [
+      ...state.cards,
+      {
+        id: action.id,
+        title: action.title
+      }
+    ],
+
+    projects: [
+      ...state.projects, {
+        projects: state.projects.map(p => {
+          if (p.id === action.projectId) {
+            p.listDone.push(action.id)
+          }
+
+          return p
+        })
+      }
+    ]
+  }
+
   switch (action.type) {
     case ADD_CARD_TO_TODO:
-      return {
-        projects: [
-          ...state.projects, {
-            projects: state.projects.map(p => {
-              if (p.id == action.projectId) {
-                p.listTodo.push(action.id)
-              }
-
-              return p
-            })
-          }
-        ],
-
-        cards: [
-          ...state.cards,
-          {
-            id: action.id,
-            title: action.title
-          }
-        ]
-      };
+      return updatedStateForTodoList;
 
     case ADD_CARD_TO_DOING:
-      return {
-        cards: [
-          ...state.cards,
-          {
-            id: action.id,
-            title: action.title
-          }
-        ],
-
-        projects: [
-          ...state.projects, {
-            projects: state.projects.map(p => {
-              if (p.id === action.projectId) {
-                p.listDoing.push(action.id)
-              }
-
-              return p
-            })
-          }
-        ]
-      };
+      return updatedStateForDoingList;
 
     case ADD_CARD_TO_DONE:
-      return {
-        cards: [
-          ...state.cards,
-          {
-            id: action.id,
-            title: action.title
-          }
-        ],
-
-        projects: [
-          ...state.projects, {
-            projects: state.projects.map(p => {
-              if (p.id === action.projectId) {
-                p.listDone.push(action.id)
-              }
-
-              return p
-            })
-          }
-        ]
-      }
+      return updatedStateForDoneList;
 
     default:
       return state

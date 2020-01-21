@@ -9,7 +9,6 @@ import { addProject } from '../../actions/actions';
 import scrumBoard2 from '../../images/scrum-board2.jpg'
 
 function mapStateToProps(state) {
-  console.log(state)
   return {
     projects: state.projects.projects
   };
