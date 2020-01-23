@@ -17,30 +17,33 @@ export function addProject(id, title) {
   }
 }
 
-export function addCardTodo(id, title, projectId) {
+export function addCardTodo(id, title, projectId, projects) {
   return {
     type: ADD_CARD_TO_TODO,
     id,
     title,
-    projectId
+    projectId,
+    projects
   }
 }
 
-export function addCardDoing(id, title, projectId) {
+export function addCardDoing(id, title, projectId, projects) {
   return {
     type: ADD_CARD_TO_DOING,
     id,
     title,
-    projectId
+    projectId,
+    projects
   }
 }
 
-export function addCardDone(id, title, projectId) {
+export function addCardDone(id, title, projectId, projects) {
   return {
     type: ADD_CARD_TO_DONE,
     id,
     title,
-    projectId
+    projectId,
+    projects
   }
 }
 

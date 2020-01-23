@@ -9,7 +9,6 @@ import './Demo.css';
 import scrumBoard2 from '../../images/scrum-person.jpg'
 
 function mapStateToProps(state) {
-  console.log(state)
   return {
     projects: state.projects.projects,
     cards: state.cards.cards

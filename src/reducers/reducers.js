@@ -34,9 +34,6 @@ const initialState = {
   ]
 }
 
-// reducer is a pure function that takes the previous state 
-// and an action, and returns the next state
-
 export const addProjectReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_PROJECT:
@@ -58,13 +55,15 @@ export const addProjectReducer = (state = initialState, action) => {
   }
 }
 
+// TODO: merge reducers together, adjust rootReducer accordingly, you can have only 1 initialState..
 export const addCardReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_CARD_TO_TODO:
       let updatedStateForTodoList = {
         projects: [
-          ...state.projects, state.projects.map(p => {
+          ...action.projects, action.projects.map(p => {
             if (p.id == action.projectId) {
+
               p.listTodo.push(action.id)
             }
             return p
@@ -85,7 +84,7 @@ export const addCardReducer = (state = initialState, action) => {
     case ADD_CARD_TO_DOING:
       let updatedStateForDoingList = {
         projects: [
-          ...state.projects, state.projects.map(p => {
+          ...action.projects, action.projects.map(p => {
             if (p.id === action.projectId) {
               p.listDoing.push(action.id)
             }
@@ -107,7 +106,7 @@ export const addCardReducer = (state = initialState, action) => {
     case ADD_CARD_TO_DONE:
       let updatedStateForDoneList = {
         projects: [
-          ...state.projects, state.projects.map(p => {
+          ...action.projects, action.projects.map(p => {
             if (p.id === action.projectId) {
               p.listDone.push(action.id)
             }
