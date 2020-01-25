@@ -1,4 +1,4 @@
-/* HEADER */
+/* header */
 .demo-nav-li {
   float: right;
   margin-left: 10px;
@@ -8,7 +8,7 @@
   border-bottom: 3px solid #FF911E;
 }
 
-/* PROJECT LIST */
+/* project list */
 
 .project-list h3 {
   color: #01008A;
@@ -52,10 +52,10 @@
 }
 
 .project-item-title h2 {
-  width: 90%;
+  width: 70%;
 }
 
-/* PROJECT ITEM */
+/* project item */
 
 .project-item-main {
   display: flex;
@@ -70,14 +70,15 @@
   margin: 10px;
 }
 
-
-.project-item-main {
-  background-color: rgba(103,116,255, 0.7);
-  border-radius: 10px;
-  padding: 10px;
-  width: 90%;
-  margin-right: auto;
-  margin-left: auto;
+/* background board */
+.guDsfl {
+  background-color: rgba(103,116,255, 0.7)!important;
+  border-radius: 10px!important;
+  padding: 10px!important;
+  width: 70%!important;
+  /* margin-right: auto!important;
+  margin-left: auto!important; */
+  height: auto
 }
 
 /* FORMS */
@@ -110,32 +111,109 @@
   font-size: 16px;;
 }
 
-.add-card-form input::placeholder, .add-project-form input::placeholder {
+.add-project-form input::placeholder {
   color: #FF911E;
 }
 
-/* LISTS */
 
-.list-todo, .list-done, .list-doing {
+.gFJOQf {
   text-align: left;
+  /* background-image: linear-gradient(#DFDFDF, white)!important; */
+  border-radius: 10px!important;
+  margin: 20px!important;
+  margin-top: 10px!important;
 }
 
-.list-todo-wrapper, .list-done-wrapper, .list-doing-wrapper {
-  background-image: linear-gradient(#DFDFDF, white);
-  border-radius: 10px;
-  margin: 5px;
-  width: 30%;
+/* button Add card */
+.kQVYfQ {
+  color: #FF911E!important;
+  background-color: inherit!important;
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px!important;
+  padding-left: 0;
 }
 
-.todo-column li, .doing-column li, .done-column li {
-  background-color: white;
-  border-radius: 10px;
-  margin: 10px;
-  padding: 5px;
+/* button Click to add card */
+.jwoiC:hover {
+  text-decoration: none!important;
 }
 
-/*  IMAGES */
+/* button Cancel */
+.PJPrx {
+  background: inherit!important;
+  color: #999999!important;
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px!important;
+}
 
+/* label */
+.gDooAJ {
+  font-size: 9px!important;
+}
+
+/* description */
+.fAZUdY {
+  font-size: 10px!important;
+  padding-top: 5px!important;
+}
+
+/* background form for adding a card */
+.eCngkD {
+  border-radius: 10px!important;
+  border-bottom: none!important;
+}
+
+.comPlainTextContentEditable {
+  outline: none!important;
+}
+
+/* background under buttons Add card & Cancel */
+.hGTMYp {
+  background-color: inherit!important;
+}
+
+/* font color Click to add card */
+.gFJOQf a {
+  color: #FF911E!important;
+  font-weight: 600;
+}
+
+/* background list */
+.NSWzM {
+  background-image: linear-gradient(#DFDFDF, white)!important;
+  border-radius: 10px!important;
+  margin: 5px!important;
+  width: 30%!important;
+}
+
+/* background card */
+.fCeWxq {
+  border: none!important;
+  padding-bottom: 0!important;
+  margin-bottom: 0!important;
+}
+
+.jdfPWI {
+  border-radius: 10px!important;
+  border: none!important;
+}
+
+/* background list title */
+.GWYpU {
+  background-color: #FF911E!important;
+  border-radius: 10px!important;
+  margin: 10px!important;
+  padding: 15px!important;
+  color: white!important;
+}
+
+/* list title */
+.GWYpU span {
+  text-align: left!important;
+  font-size: 20px!important;
+}
+
+/*  images */
 .scrum-board2 {
   width: 100%
 }
@@ -169,8 +247,8 @@
     box-shadow: 0 100px 80px rgba(0, 0, 0, 0.12);
   }
 
-  .project-item-main, .project-item-title h2 {
-    width: 70%;
+  .smooth-dnd-container.horizontal {
+    white-space: unset;
   }
 }
 

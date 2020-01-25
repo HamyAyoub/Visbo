@@ -1,61 +1,21 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 // import PropTypes from 'prop-types';
 import Header from './Header';
-import ListTodo from './ListTodo';
-import ListDoing from './ListDoing';
-import ListDone from './ListDone';
 import './Demo.css';
 import scrumBoard2 from '../../images/scrum-person.jpg'
-
-function mapStateToProps(state) {
-  return {
-    projects: state.projects.projects,
-    cards: state.cards.cards
-  }
-}
+import Board from 'react-trello';
+import AppContext from '../../AppContext';
 
 class ProjectItem extends Component {
-  renderTodoCards() {
-    const activeProject = this.props.projects.find(p =>
-      p.id == this.props.match.params.projectId
-    )
-
-    const todoCards = activeProject.listTodo && activeProject.listTodo.map(id =>
-      this.props.cards.find(x => x.id === id)
-    )
-
-    return todoCards
-  }
-
-  renderDoingCards() {
-    const activeProject = this.props.projects.find(p =>
-      p.id == this.props.match.params.projectId
-    )
-
-    const doingCards = activeProject.listDoing && activeProject.listDoing.map(id =>
-      this.props.cards.find(x => x.id === id)
-    )
-
-    return doingCards
-  }
-
-  renderDoneCards() {
-    const activeProject = this.props.projects.find(p =>
-      p.id == this.props.match.params.projectId
-    )
-
-    const doneCards = activeProject.listDone && activeProject.listDone.map(id =>
-      this.props.cards.find(x => x.id === id)
-    )
-
-    return doneCards
-  }
+  static contextType = AppContext;
 
   render() {
-    const project = this.props.projects.find(p =>
+    const project = this.context.projects.find(p =>
       p.id == this.props.match.params.projectId
     )
+
+    let lanes = project.lanes
+    let data = { lanes }
 
     return (
       <div>
@@ -66,13 +26,12 @@ class ProjectItem extends Component {
         </div>
 
         <main className="project-item-main">
-
-          <ListTodo projectId={project.id} todoCards={this.renderTodoCards()} />
-
-          <ListDoing projectId={project.id} doingCards={this.renderDoingCards()} />
-
-          <ListDone projectId={project.id} doneCards={this.renderDoneCards()} />
-
+          <Board
+            data={data}
+            editable
+          // canAddLanes
+          // editLaneTitle
+          />
         </main>
 
         <div className='scrum-board2-wrapper'>
@@ -87,4 +46,4 @@ class ProjectItem extends Component {
 //   projects: PropTypes.array
 // }
 
-export default connect(mapStateToProps)(ProjectItem);
+export default ProjectItem

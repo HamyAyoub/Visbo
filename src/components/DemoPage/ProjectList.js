@@ -2,32 +2,26 @@ import React, { Component } from 'react';
 import Header from './Header';
 import './Demo.css';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
 // import PropTypes from 'prop-types';
 import uuid from 'uuid/v4';
-import { addProject } from '../../actions/actions';
-import scrumBoard2 from '../../images/scrum-board2.jpg'
-
-function mapStateToProps(state) {
-  return {
-    projects: state.projects.projects
-  };
-}
+import scrumBoard2 from '../../images/scrum-board2.jpg';
+import AppContext from '../../AppContext';
 
 class ProjectList extends Component {
+
+  static contextType = AppContext;
   handleSubmit(e) {
     e.preventDefault()
 
     let id = uuid()
     let title = e.target.title.value
 
-    this.props.dispatch(addProject(id, title))
-
+    this.context.addProject(id, title)
     this.formRef.reset();
   }
 
   render() {
-    const { projects } = this.props;
+    const { projects } = this.context;
 
     return (
       <div className='project-list-wrapper'>
@@ -38,7 +32,6 @@ class ProjectList extends Component {
         </div>
 
         <main className='project-list-main'>
-
           <ul className="project-list">
             {projects.map(p => {
               return (
@@ -50,6 +43,7 @@ class ProjectList extends Component {
               )
             })}
           </ul>
+
           <div>
             <form
               onSubmit={e => this.handleSubmit(e)}
@@ -66,6 +60,7 @@ class ProjectList extends Component {
             </form>
           </div>
         </main>
+
         <div className='scrum-board2-wrapper'>
           <img src={scrumBoard2} alt="scrum-board" className="scrum-board2" />
         </div>
@@ -78,4 +73,4 @@ class ProjectList extends Component {
 //   projects: PropTypes.array
 // };
 
-export default connect(mapStateToProps)(ProjectList);
+export default ProjectList
