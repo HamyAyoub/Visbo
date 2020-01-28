@@ -22,7 +22,7 @@ class ProjectList extends Component {
 
   render() {
     const { projects } = this.context;
-    console.log(projects)
+
     return (
       <div className='project-list-wrapper'>
         <Header path={this.props.match.path} />

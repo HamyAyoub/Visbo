@@ -14,8 +14,7 @@ class ProjectItem extends Component {
       p.id == this.props.match.params.projectId
     )
 
-    let lanes = project.lanes
-    let data = { lanes }
+    let data = { lanes: project.lanes }
 
     return (
       <div>
