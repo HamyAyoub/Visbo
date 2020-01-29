@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Header from './Header';
 import './Demo.css';
 import { Link } from 'react-router-dom';
-// import PropTypes from 'prop-types';
 import uuid from 'uuid/v4';
 import scrumBoard2 from '../../images/scrum-board2.jpg';
 import AppContext from '../../AppContext';
@@ -22,7 +21,7 @@ class ProjectList extends Component {
 
   render() {
     const { projects } = this.context;
-
+    console.log(this.props)
     return (
       <div className='project-list-wrapper'>
         <Header path={this.props.match.path} />
@@ -68,9 +67,5 @@ class ProjectList extends Component {
     );
   }
 }
-
-// ProjectList.propTypes = {
-//   projects: PropTypes.array
-// };
 
 export default ProjectList

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
 import Header from './Header';
 import './Demo.css';
 import scrumBoard2 from '../../images/scrum-person.jpg'
@@ -40,9 +39,5 @@ class ProjectItem extends Component {
     );
   }
 }
-
-// ProjectItem.propTypes = {
-//   projects: PropTypes.array
-// }
 
 export default ProjectItem
