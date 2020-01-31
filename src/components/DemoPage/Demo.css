@@ -52,7 +52,7 @@
 }
 
 .project-item-title h2 {
-  width: 70%;
+  width: 70%
 }
 
 /* project item */
@@ -71,11 +71,11 @@
 }
 
 /* background board */
-.guDsfl {
+.react-trello-board {
   background-color: rgba(103,116,255, 0.7)!important;
   border-radius: 10px!important;
   padding: 10px!important;
-  width: 70%!important;
+  /* width: 70%!important; */
   /* margin-right: auto!important;
   margin-left: auto!important; */
   height: auto
@@ -116,16 +116,23 @@
 }
 
 
-.gFJOQf {
+.react-trello-lane {
   text-align: left;
-  /* background-image: linear-gradient(#DFDFDF, white)!important; */
   border-radius: 10px!important;
   margin: 20px!important;
   margin-top: 10px!important;
 }
 
+/* button Cancel */
+.react-trello-lane button {
+  background: inherit!important;
+  color: #999999!important;
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px!important;
+}
+
 /* button Add card */
-.kQVYfQ {
+.react-trello-lane button:nth-child(2) {
   color: #FF911E!important;
   background-color: inherit!important;
   font-family: 'Nunito', sans-serif;
@@ -134,31 +141,23 @@
 }
 
 /* button Click to add card */
-.jwoiC:hover {
+.react-trello-lane a:hover {
   text-decoration: none!important;
 }
 
-/* button Cancel */
-.PJPrx {
-  background: inherit!important;
-  color: #999999!important;
-  font-family: 'Nunito', sans-serif;
-  font-size: 18px!important;
-}
-
 /* label */
-.gDooAJ {
+.react-trello-card span:nth-child(2) {
   font-size: 9px!important;
 }
 
 /* description */
-.fAZUdY {
+.react-trello-card div:nth-child(2) {
   font-size: 10px!important;
   padding-top: 5px!important;
 }
 
 /* background form for adding a card */
-.eCngkD {
+.react-trello-lane article {
   border-radius: 10px!important;
   border-bottom: none!important;
 }
@@ -168,18 +167,18 @@
 }
 
 /* background under buttons Add card & Cancel */
-.hGTMYp {
+.react-trello-lane div:last-child {
   background-color: inherit!important;
 }
 
 /* font color Click to add card */
-.gFJOQf a {
+.react-trello-lane a {
   color: #FF911E!important;
   font-weight: 600;
 }
 
 /* background list */
-.NSWzM {
+.react-trello-lane {
   background-image: linear-gradient(#DFDFDF, white)!important;
   border-radius: 10px!important;
   margin: 5px!important;
@@ -187,19 +186,19 @@
 }
 
 /* background card */
-.fCeWxq {
+.react-trello-card header {
   border: none!important;
   padding-bottom: 0!important;
   margin-bottom: 0!important;
 }
 
-.jdfPWI {
+.react-trello-card {
   border-radius: 10px!important;
   border: none!important;
 }
 
 /* background list title */
-.GWYpU {
+.react-trello-lane > header:first-child {
   background-color: #FF911E!important;
   border-radius: 10px!important;
   margin: 10px!important;
@@ -208,7 +207,7 @@
 }
 
 /* list title */
-.GWYpU span {
+.react-trello-lane header:first-child {
   text-align: left!important;
   font-size: 20px!important;
 }

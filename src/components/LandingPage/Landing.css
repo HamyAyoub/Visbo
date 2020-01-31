@@ -149,13 +149,13 @@ footer {
   }
 
   footer {
-    left: 100px;
-    right: 100px;
+    left: 150px;
+    right: 150px;
   }
 
   nav {
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 150px;
+    margin-right: 150px;
   }
 
 }
