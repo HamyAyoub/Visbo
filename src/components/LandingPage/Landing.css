@@ -54,7 +54,6 @@ button {
 
 /*  BACKGROUND IMG  */
 .scrum-board {
-  margin-top: 50px;
   width: 350px;
 }
 
@@ -97,7 +96,7 @@ footer {
 
 .landing-main-inner-wrapper {
   position: absolute;
-  top: 300px;
+  top: 280px;
   left: 0;
   right: 0;
 }
@@ -106,11 +105,10 @@ footer {
   color: #6774FF;
 }
 
-
 @media screen and (min-width: 600px) {
   
   .landing-main-inner-wrapper .headline {
-    font-size: 50px;
+    font-size: 40px;
   }
 
   .landing-main-inner-wrapper h3 {
@@ -118,13 +116,22 @@ footer {
   }
 
   .scrum-board {
-    width: 400px;
-    margin-top: 0;
+    width: 380px;
   }
 
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 800px) {
+
+  .scrum-board {
+    width: 420px;
+  }
+
+  .headline-img-wrapper {
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   .landing-main-inner-wrapper {
     text-align: left;
@@ -132,25 +139,80 @@ footer {
     left: 100px;
   }
 
+  .landing-main-inner-wrapper .headline {
+    font-size: 45px;
+  }
+
   .scrum-board-wrapper {
     float: right;
-    margin-top: 150px;
-    margin-right: 100px;
+    margin-top: 150px
   }
 
   footer {
-    left: 150px;
-    right: 150px;
+    left: 100px;
+    right: 100px;
   }
 
   nav {
-    margin-left: 150px;
-    margin-right: 150px;
+    margin-left: 100px;
+    margin-right: 100px;
   }
 
 }
 
+@media screen and (min-width: 900px) {
+
+  .landing-main-inner-wrapper .headline {
+    font-size: 55px;
+  }
+
+}
+
+@media screen and (min-width: 1000px) {
+
+  .scrum-board {
+    width: 500px;
+  }
+
+  .scrum-board-wrapper {
+    margin-top: 100px;
+  }
+
+  .landing-main-inner-wrapper {
+    left: 150px;
+  }
+
+  .headline-img-wrapper {
+    width: 800px;
+  }
+}
+
 @media screen and (min-width: 1200px) {
 
+  .scrum-board {
+    width: 600px;
+  }
 
+  .scrum-board-wrapper {
+    margin-top: 0;
+  }
+
+  .landing-main-inner-wrapper .headline {
+    font-size: 60px;
+  }
+
+  .landing-main-inner-wrapper {
+    left: 200px;
+  }
+
+  .headline-img-wrapper {
+    width: 1000px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+
+  .landing-main-inner-wrapper {
+    left: 300px;
+  }
 }
