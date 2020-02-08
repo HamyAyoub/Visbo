@@ -52,7 +52,7 @@
 }
 
 .project-item-title h2 {
-  width: 70%
+  /* width: 70% */
 }
 
 /* project item */
@@ -115,6 +115,9 @@
   color: #FF911E;
 }
 
+.comPlainTextContentEditable--has-placeholder {
+  font-size: 10px!important;
+}
 
 .react-trello-lane {
   text-align: left;
@@ -128,7 +131,8 @@
   background: inherit!important;
   color: #999999!important;
   font-family: 'Nunito', sans-serif;
-  font-size: 18px!important;
+  font-size: 16px!important;
+  float: right;
 }
 
 /* button Add card */
@@ -136,18 +140,18 @@
   color: #FF911E!important;
   background-color: inherit!important;
   font-family: 'Nunito', sans-serif;
-  font-size: 18px!important;
-  padding-left: 0;
+  font-size: 16px!important;
+  float: left;
+  padding-left: 10px
+}
+
+.react-trello-lane div > div:last-child {
+  background-color: inherit;
 }
 
 /* button Click to add card */
 .react-trello-lane a:hover {
   text-decoration: none!important;
-}
-
-/* label */
-.react-trello-card span:nth-child(2) {
-  font-size: 9px!important;
 }
 
 /* description */
@@ -166,11 +170,6 @@
   outline: none!important;
 }
 
-/* background under buttons Add card & Cancel */
-.react-trello-lane div:last-child {
-  background-color: inherit!important;
-}
-
 /* font color Click to add card */
 .react-trello-lane a {
   color: #FF911E!important;
@@ -179,10 +178,10 @@
 
 /* background list */
 .react-trello-lane {
-  background-image: linear-gradient(#DFDFDF, white)!important;
+  background-image: linear-gradient(white, #DFDFDF)!important;
   border-radius: 10px!important;
   margin: 5px!important;
-  width: 30%!important;
+  /* width: 30%!important; */
 }
 
 /* background card */
@@ -201,14 +200,12 @@
 .react-trello-lane > header:first-child {
   background-color: #FF911E!important;
   border-radius: 10px!important;
-  margin: 10px!important;
-  padding: 15px!important;
+  margin-bottom: 10px!important;
+  padding: 10px!important;
   color: white!important;
 }
 
-/* list title */
-.react-trello-lane header:first-child {
-  text-align: left!important;
+.react-trello-lane > header:first-child span {
   font-size: 20px!important;
 }
 
@@ -226,6 +223,10 @@
   padding-top: 30px
 }
 
+.react-trello-board {
+  height: 60vh!important;
+}
+
 
 @media screen and (min-width: 500px) {
 
@@ -233,15 +234,19 @@
     bottom: 0;
   }
  
-  .project-list-main, .project-list-title h2 {
+  .project-list-main, .project-list-title h2, .project-item-title h2 {
     width: 450px;
   }
+
+  .smooth-dnd-container.horizontal {
+    white-space: nowrap;
+}
 }
 
 
 @media screen and (min-width: 800px) {
 
-  .project-list-main, .project-list-title h2 {
+  .project-list-main, .project-list-title h2, .project-item-title h2  {
     width: 750px;
     box-shadow: 0 100px 80px rgba(0, 0, 0, 0.12);
   }
@@ -249,6 +254,14 @@
   .smooth-dnd-container.horizontal {
     white-space: unset;
   }
+}
+
+@media screen and (min-width: 850px) {
+
+  .project-item-title h2  {
+    width: 840px;
+  }
+
 }
 
 @media screen and (min-width: 1000px) {

@@ -13,22 +13,20 @@ class ProjectItem extends Component {
       p.id == this.props.match.params.projectId
     )
 
-    let data = { lanes: project.lanes }
+    let data = project && { lanes: project.lanes }
 
     return (
       <div>
         <Header />
 
         <div className='project-item-title'>
-          <h2>{project.title}</h2>
+          <h2>{project && project.title}</h2>
         </div>
 
         <main className="project-item-main">
           <Board
             data={data}
             editable
-          // canAddLanes
-          // editLaneTitle
           />
         </main>
 
