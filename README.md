@@ -3,7 +3,7 @@
 ## Live: [Visbo](https://visbo.now.sh/)
 
 ## Description:
-Simple Trello alternative app built with React, Node/Express and Postgres. User will be able to create an account and manage their "todos" using CRUD operations.
+Simple Trello alternative app built with React, [Node/Express and Postgres](https://github.com/alexandrakollarova/visbo-api). User will be able to create an account and manage their "todos" using CRUD operations.
 
 ## In action:
 
