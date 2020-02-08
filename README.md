@@ -8,19 +8,13 @@ Simple Trello alternative app built with React, Node/Express and Postgres. User 
 ## In action:
 
 ### Landing Page
-![alt text](visuals/visual1.png)
+![alt text](images/visual1.png)
 
-### View Demo page
-![alt text](visuals/visual2.png)   ![alt text](visuals/visual5.png) 
+### Create a project
+![alt text](images/visual2.png)   ![alt text](visuals/visual5.png) 
 
-### Search Places in your area
-![alt text](visuals/visual3.png)
- 
-### Decide to Sign up
-![alt text](visuals/visual4.png)
-
-### Swipe left and right through your fav spots! 
-![alt text](visuals/visual6.png)
+### Add your todos
+![alt text](images/visual3.png)
 
 ## Tech Used:
 * ReactJS
