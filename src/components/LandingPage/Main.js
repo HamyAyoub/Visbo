@@ -20,7 +20,7 @@ class Main extends Component {
         </div>
         <div className='footer-wrapper'>
           <Link to='/demo-project' className='btn btn-demo'>EXPLORE VISBO</Link>
-          <h3>Easy, flexibile and free.</h3>
+          <h3>Easy, flexible and free.</h3>
         </div>
       </main>
     );

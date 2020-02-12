@@ -21,7 +21,7 @@ class ProjectList extends Component {
 
   render() {
     const { projects } = this.context;
-    console.log(this.props)
+
     return (
       <div className='project-list-wrapper'>
         <Header path={this.props.match.path} />

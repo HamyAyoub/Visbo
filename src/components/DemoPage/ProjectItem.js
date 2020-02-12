@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import './Demo.css';
-import scrumBoard2 from '../../images/scrum-person.jpg'
+import scrumBoard2 from '../../images/scrum-person.jpg';
 import Board from 'react-trello';
 import AppContext from '../../AppContext';
 
@@ -24,10 +24,7 @@ class ProjectItem extends Component {
         </div>
 
         <main className="project-item-main">
-          <Board
-            data={data}
-            editable
-          />
+          {data && <Board data={data} editable />}
         </main>
 
         <div className='scrum-board2-wrapper'>
