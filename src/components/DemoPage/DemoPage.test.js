@@ -10,9 +10,10 @@ describe('Smoke tests for components in DemoPage folder', () => {
     const div = document.createElement('div');
     ReactDOM.render(
       <BrowserRouter>
-        <Route exact path='/demo-project' component={ProjectList} />
+        <Route exact path="/demo-project" component={ProjectList} />
       </BrowserRouter>,
-      div);
+      div,
+    );
     ReactDOM.unmountComponentAtNode(div);
   });
 
@@ -22,7 +23,8 @@ describe('Smoke tests for components in DemoPage folder', () => {
       <BrowserRouter>
         <Header />
       </BrowserRouter>,
-      div);
+      div,
+    );
     ReactDOM.unmountComponentAtNode(div);
   });
 
@@ -31,9 +33,10 @@ describe('Smoke tests for components in DemoPage folder', () => {
 
     ReactDOM.render(
       <BrowserRouter>
-        <Route path='/demo-project/:projectId' component={ProjectItem} />
+        <Route path="/demo-project/:projectId" component={ProjectItem} />
       </BrowserRouter>,
-      div);
+      div,
+    );
     ReactDOM.unmountComponentAtNode(div);
   });
-})
+});

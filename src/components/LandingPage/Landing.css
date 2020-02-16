@@ -54,7 +54,7 @@ button {
 
 /*  BACKGROUND IMG  */
 .scrum-board {
-  width: 350px;
+  width: 320px;
 }
 
 .scrum-board-wrapper {
@@ -104,6 +104,14 @@ footer {
 .landing-main-inner-wrapper .headline {  
   color: #282EBA;
 }
+
+@media screen and (min-width: 375px) {
+
+  .scrum-board {
+    width: 350px;
+  }
+}
+
 
 @media screen and (min-width: 600px) {
   

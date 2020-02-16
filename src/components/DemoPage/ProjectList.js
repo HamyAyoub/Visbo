@@ -7,15 +7,15 @@ import scrumBoard2 from '../../images/scrum-board2.jpg';
 import AppContext from '../../AppContext';
 
 class ProjectList extends Component {
-
   static contextType = AppContext;
+
   handleSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
 
-    let id = uuid()
-    let title = e.target.title.value
+    let id = uuid();
+    let title = e.target.title.value;
 
-    this.context.addProject(id, title)
+    this.context.addProject(id, title);
     this.formRef.reset();
   }
 
@@ -68,4 +68,4 @@ class ProjectList extends Component {
   }
 }
 
-export default ProjectList
+export default ProjectList;

@@ -11,9 +11,9 @@ class ProjectItem extends Component {
   render() {
     const project = this.context.projects.find(p =>
       p.id == this.props.match.params.projectId
-    )
+    );
 
-    let data = project && { lanes: project.lanes }
+    let data = project && { lanes: project.lanes };
 
     return (
       <div>
@@ -35,4 +35,4 @@ class ProjectItem extends Component {
   }
 }
 
-export default ProjectItem
+export default ProjectItem;
